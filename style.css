@@ -293,7 +293,7 @@ section:nth-child(even) {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   html {
     font-size: 30% !important;
   }
@@ -358,5 +358,6 @@ section:nth-child(even) {
     margin-bottom: 2px !important;
   }
 }
+
 
 
