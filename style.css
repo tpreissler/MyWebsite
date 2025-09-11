@@ -299,7 +299,7 @@ section:nth-child(even) {
   }
 
   .heading{
-    font-size: 3.5rem;
+    font-size: 5rem;
   }
 
   .subglass h3{
@@ -332,6 +332,7 @@ section:nth-child(even) {
     padding: none; 
   }
 }
+
 
 
 
