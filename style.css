@@ -298,12 +298,16 @@ section:nth-child(even) {
     font-size: 35%;
   }
 
+  .header-name h1{
+     font-size: 4rem;
+  } 
+    
   .heading{
     font-size: 5rem;
   }
 
   .subglass h3{
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
 
   .subglass{
@@ -311,7 +315,7 @@ section:nth-child(even) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     border-radius: 4rem;
   }
 
@@ -332,6 +336,7 @@ section:nth-child(even) {
     padding: none; 
   }
 }
+
 
 
 
