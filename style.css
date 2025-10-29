@@ -254,6 +254,10 @@ footer{
     html{
         font-size: 75%;
     }
+
+    .container img{
+    max-width: 30vw;
+    }
 }
 
 @media (max-width: 750px){
@@ -360,6 +364,7 @@ footer{
         border-radius: 0.5rem;
     }
 }
+
 
 
 
