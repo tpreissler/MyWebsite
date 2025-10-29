@@ -1,25 +1,33 @@
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let selections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const popupMenu = document.querySelector('.popup-menu');
 
-window.onscroll = () => {
-    selections.foreEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+    if (!hamburger || !popupMenu) {
+        console.error('Menu elements not found!');
+        return;
+    }
 
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a [href*=' + id + ' ]').classList.add('active')
-            })
+    console.log('Menu elements found and initialized');
+
+    // Toggle menu when hamburger is clicked
+    hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        popupMenu.classList.toggle('active');
+        console.log('Hamburger clicked - Menu toggled, active:', popupMenu.classList.contains('active'));
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!popupMenu.contains(e.target) && popupMenu.classList.contains('active')) {
+            popupMenu.classList.remove('active');
         }
-    })
-}
+    });
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
+    // Close menu when a link is clicked
+    popupMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            popupMenu.classList.remove('active');
+        });
+    });
+});
