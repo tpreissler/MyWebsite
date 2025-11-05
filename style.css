@@ -18,7 +18,7 @@
     --bg-dark: oklch(0.1 0 264);
     --bg-light: oklch(0.3 0 264);
 
-    --shadow-l: inset 0 .1rem .1rem #ffffff70, 
+    --shadow-l: inset 0 .1rem .1rem #ffffff70,
     0 .4rem .6rem #00000030,
     0 .6rem 1rem #00000015;
 
@@ -29,6 +29,22 @@
 
     --border: hsl(0, 0%, 30%);
     --gradient: linear-gradient(to bottom, rgba(9, 32, 60, 0.8) 0%, rgba(0, 0, 128, 0) 60%);
+
+    --bg-gradient: linear-gradient(
+    to right,
+    hsl(206, 97%, 12%),
+    oklch(0.1 0 264),
+    oklch(0.1 0 264),
+    hsl(206, 97%, 12%)
+  );
+
+  --border-gradient: linear-gradient(
+    to right,
+    hsl(206, 97%, 12%),
+    oklch(0.1 0 264),
+    oklch(0.1 0 264),
+    hsl(206, 97%, 12%)
+  );
 }
 
 /*------------------Global Styles------------------------------------*/
@@ -43,6 +59,7 @@ body{
     background-color: var(--bg-dark);
     color: var(--font-color);
     font: var(--p);
+    background-image: var(--bg-gradient);
 }
 
 a{
@@ -50,13 +67,13 @@ a{
     color: var(--white);
 }
 
-.hero{
-    height: 100vh;
-}
+
 
 .content{
-    max-width: 900px;
+    width: 75%;
 }
+
+
 
 /*-----------------------Utility Classes-----------------------------*/
 section{
@@ -73,14 +90,12 @@ section{
     align-items: center;
     text-align: left;
     width: 80vw;
-    border: .1rem solid var(--border);
     padding: 5rem;
-    background-color: var(--bg);
+    box-shadow: var(--shadow-l), var(--shadow-2);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
     border-radius: 4rem;
-    box-shadow:  var(--shadow-l), var(--shadow-2);
 }
-
-
 
 .section-title{
     font: var(--h2);
@@ -109,8 +124,7 @@ section div img{
     stroke: var(--font-color);
     padding: .5rem;
     transition: stroke 0.3s;
-    border: .1rem solid var(--border);
-    background-color: var(--bg-light);
+    border: 1px solid var(--border);
     border-radius: 4rem;
     box-shadow:  var(--shadow-l), var(--shadow-2);
 }
@@ -119,7 +133,7 @@ section div img{
   stroke: #ccc;
 }
 
-.container div h3{
+.container .content h3{
     padding-bottom: .25rem;;
     border-bottom: .2rem solid var(--border);
 }
@@ -135,7 +149,6 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bg);
     position: fixed;
     width: 90vw;
     top: 0;
@@ -143,11 +156,12 @@ header{
     transform: translateX(-50%);
     border-radius: 4rem;
     margin-top: 1rem;
-    border: .1rem solid var(--border);
+    border: 1px solid var(--border);
     height: 8rem;
     z-index: 1000;
     overflow: visible;
     box-shadow:  var(--shadow-l);
+    backdrop-filter: blur(10px);
 }
 
 .logo{
@@ -161,9 +175,9 @@ header{
     padding-left: .5rem;
     padding-right : 1.5rem;
     border-radius: 4rem;
-    background-color: var(--bg-light);
-    border: .1rem solid var(--border);
+    border: 1px solid var(--border);
     box-shadow:  var(--shadow-l), var(--shadow-2);
+    backdrop-filter: blur(10px);
 }
 
 
@@ -178,15 +192,15 @@ nav{
     margin-right: 1.5rem;
     padding: 1.5rem;
     border-radius: 4rem;
-    background-color: var(--bg-light);
-    border: .1rem solid var(--border);
+    border: 1px solid var(--border);
     box-shadow:  var(--shadow-l), var(--shadow-2);
+    backdrop-filter: blur(10px);
 }
 
 header img{
     width: 4rem;
     border-radius: 50%;
-    border: .1rem solid var(--border);
+    border: 1px solid var(--border);
 }
 
 .hamburger{
@@ -215,13 +229,14 @@ body img
 .hero img{
     border-radius: 50%;
     margin-bottom: 3rem;;
-    border: .1rem solid var(--border);
+    border: 1px solid var(--border);
     box-shadow:  var(--shadow-l), var(--shadow-2);}
 
-.hero h3{
+.hero-content h3{
     font: var(--h1);
     word-spacing: 1.5rem;
     color: var(--subheading-color);
+    font-size: 1.25rem;
 }
 
 /*--------------------About Me Styles---------------------------*/
@@ -237,14 +252,14 @@ footer{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg);
     width: 80vw;
     margin: 2rem auto 1rem auto;
     border-radius: 4rem;
-    border: .1rem solid var(--border);
+    border: 1px solid var(--border);
     padding: 1rem 2rem;
     color: var(--subheading-color);
     box-shadow:  var(--shadow-l), var(--shadow-2);
+    backdrop-filter: blur(10px);
 }
 
 
@@ -277,28 +292,15 @@ footer{
         height: 7rem;
    }
 
-   .hero-content{
-    height: 80vh;
-   }
-
    .sub1{
     display: none;
    }
 
    .sub2{
-    display: block;
-    font-size: 85%;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-bottom: 3rem;
-   }
-
-   .container h3{
-    font-size: 85%;
-    word-spacing: .5rem;
-   }
-
-   .content h3{
-    font-size: 100%;
+    font-size: 1.5rem;
    }
 
     .menu{
@@ -319,11 +321,12 @@ footer{
         position: absolute;
         top: 75%;
         right: 1rem;
-        background-color: var(--bg);
-        border: .1rem solid var(--border);
+        background-color: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border);
         border-radius: 1rem;
         padding: 1.5rem;
-        z-index: 999;
+        z-index: 1;
         min-width: 200px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         display: flex;
@@ -364,6 +367,7 @@ footer{
         border-radius: 0.5rem;
     }
 }
+
 
 
 
