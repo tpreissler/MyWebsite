@@ -294,12 +294,7 @@ nav::before{
 header img{
     width: 4rem;
     border-radius: 50%;
-    border: .14rem solid transparent;
-    background: linear-gradient(
-        45deg,
-        rgba(77, 77, 77, .5) 20%,
-        rgba(255, 255, 255, .6) 50%, 
-        rgba(77, 77, 77, .5) 80%);
+    border: 1px solid var(--border);
 }
 
 .hamburger{
@@ -491,6 +486,7 @@ footer::before{
         border-radius: 0.5rem;
     }
 }
+
 
 
 
