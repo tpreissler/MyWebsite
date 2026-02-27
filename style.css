@@ -40,8 +40,8 @@ html{
 body{
     color: var(--font-color);
     font: var(--p);
-    background-image: var(--bg-gradient);
-    background-color: var(--bg-dark);
+    background-image: url("/Photos/bg.png");
+    background-size: cover;
 }
 
 a{
@@ -127,10 +127,11 @@ section div img{
     text-align: center;
     width: 100%;
     padding: 1.5rem;
-    border-radius: 4rem;
+    border-radius: 2.5rem;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     backdrop-filter: blur(10px);
+    letter-spacing: .5rem;
 }
 
 .container-title::before{
@@ -381,13 +382,32 @@ body img
 .hero img{
     border-radius: 50%;
     margin-bottom: 3rem;;
-    border: .14rem solid transparent;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.hero img::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: .14rem;              /* border thickness */
     background: linear-gradient(
-        45deg,
+        to bottom left,
         rgba(77, 77, 77, .5) 20%,
         rgba(255, 255, 255, .6) 50%, 
         rgba(77, 77, 77, .5) 80%);
-    box-shadow: var(--shadow);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+          mask-composite: exclude;
+    pointer-events: none;
 }
 
 .hero-content h3{
@@ -544,11 +564,6 @@ footer::before{
         border-radius: 0.5rem;
     }
 }
-
-
-
-
-
 
 
 
